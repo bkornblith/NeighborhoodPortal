@@ -15,7 +15,7 @@ export function Avatar({ name, board }: { name: string; board?: boolean }) {
   return <span className={`av${board ? " board" : ""}`} aria-hidden="true">{initials(name)}</span>;
 }
 
-export function Brand({ small = "Neighborhood Association" }: { small?: string }) {
+export function Brand({ small = "Homeowners Association" }: { small?: string }) {
   return (
     <span className="brand">
       <span className="mark">AW</span>

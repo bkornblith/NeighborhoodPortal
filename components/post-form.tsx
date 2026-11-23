@@ -10,7 +10,7 @@ type Props = {
 
 export function PostForm({ type, action, post, submitLabel }: Props) {
   const titleHint =
-    type === "listing" ? "What are you selling or giving away?" : type === "event" ? "What's happening?" : "What do you want to ask?";
+    type === "listing" ? "What are you selling or giving away?" : type === "event" ? "What's happening?" : type === "sighting" ? "What did you see? (e.g. Black bear on Larkspur)" : "What do you want to ask?";
   return (
     <form action={action} className="panel" style={{ maxWidth: 680 }}>
       <input type="hidden" name="type" value={type} />
@@ -61,7 +61,7 @@ export function PostForm({ type, action, post, submitLabel }: Props) {
 
       <div className="field">
         <label htmlFor="body">Details</label>
-        <textarea className="input" id="body" name="body" defaultValue={post?.body} placeholder={type === "listing" ? "Condition, size, where to pick it up…" : ""} />
+        <textarea className="input" id="body" name="body" defaultValue={post?.body} placeholder={type === "listing" ? "Condition, size, where to pick it up…" : type === "sighting" ? "Where and when, and anything neighbors should know" : ""} />
       </div>
 
       {type !== "question" && (

@@ -6,6 +6,7 @@ export type Profile = {
   full_name: string;
   house_id: number | null;
   role: Role;
+  board_title: string | null;
   status: "active" | "removed";
   phone: string | null;
   in_directory: boolean;
@@ -20,7 +21,7 @@ export type Profile = {
 
 export type House = { id: number; street_number: string; street: string };
 
-export type PostType = "listing" | "event" | "question" | "announcement";
+export type PostType = "listing" | "event" | "question" | "announcement" | "sighting";
 
 export type Post = {
   id: number;
@@ -57,3 +58,17 @@ export const CATEGORIES = ["Furniture", "Kids", "Yard & garden", "Tools", "Elect
 /** Select string for a post with its author, photos and comment count. */
 export const POST_SELECT =
   "*, author:profiles!posts_author_id_fkey(id, full_name, role, status, house:houses(*)), photos:post_photos(id, path, position), comments(count)";
+
+/** Categories for recommended services, based on the old amherstwoods.com Resources page. */
+export const SERVICE_CATEGORIES = [
+  "Appliance repair", "Arborist & tree work", "Carpentry", "Chimney", "Cleaning", "Computer help", "Electrician",
+  "Excavation & septic/sewer", "Flooring", "General contractor", "Gutters & windows", "Heating & cooling",
+  "Landscaping & lawn", "Masonry", "Movers", "Painting", "Pet sitting", "Plumbing", "Power washing", "Roofing",
+  "Snow plowing", "Solar", "Trash & recycling", "Upholstery", "Other",
+] as const;
+
+export const DOC_CATEGORIES = [
+  "By-laws and rules", "Annual meeting minutes", "Board meeting minutes", "Financial", "Neighborhood history", "Other",
+] as const;
+
+export const BOARD_TITLES = ["President", "Vice President", "Secretary", "Treasurer", "Board member"] as const;

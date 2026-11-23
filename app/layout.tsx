@@ -7,7 +7,7 @@ const body = Inter({ subsets: ["latin"], weight: ["400", "500", "600"], variable
 
 export const metadata: Metadata = {
   title: { default: "Amherst Woods", template: "%s · Amherst Woods" },
-  description: "Amherst Woods Neighborhood Association portal",
+  description: "Amherst Woods Homeowners Association portal, South Amherst, MA",
   appleWebApp: { capable: true, title: "Amherst Woods" },
 };
 

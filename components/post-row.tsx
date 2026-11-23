@@ -23,6 +23,8 @@ export function TypeChip({ post }: { post: PostWithAuthor }) {
       return <span className="chip q">Question</span>;
     case "announcement":
       return <span className="chip board">Board</span>;
+    case "sighting":
+      return <span className="chip free">Sighting</span>;
   }
 }
 

@@ -24,6 +24,11 @@ export default async function AppLayout({ children }: { children: React.ReactNod
     { href: "/market", label: "For sale & free" },
     { href: "/events", label: "Events" },
     { href: "/?type=question", label: "Questions" },
+    { href: "/sightings", label: "Sightings" },
+    { section: "Neighborhood", href: "", label: "" },
+    { href: "/info", label: "Info & dues" },
+    { href: "/documents", label: "Documents" },
+    { href: "/services", label: "Recommended services" },
     { href: "/directory", label: "Neighbors" },
     ...(isBoard
       ? [
@@ -38,7 +43,7 @@ export default async function AppLayout({ children }: { children: React.ReactNod
     <div className="shell">
       <aside className="side">
         <Link href="/" style={{ textDecoration: "none" }}>
-          <Brand small={isBoard ? "Board member" : "Neighborhood Association"} />
+          <Brand small={isBoard ? (me.board_title ?? "Board member") : "Homeowners Association"} />
         </Link>
         <Suspense>
           <Nav items={items} />

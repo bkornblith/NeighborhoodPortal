@@ -10,6 +10,7 @@ const TYPES: { key: PostType; label: string; heading: string }[] = [
   { key: "listing", label: "Sell or give away", heading: "List an item" },
   { key: "event", label: "Event", heading: "Post an event" },
   { key: "question", label: "Question", heading: "Ask the neighborhood" },
+  { key: "sighting", label: "Wildlife sighting", heading: "Share a sighting" },
 ];
 
 export default async function NewPost({ searchParams }: { searchParams: SP }) {

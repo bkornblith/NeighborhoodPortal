@@ -7,7 +7,7 @@ export default function AuthLayout({ children }: { children: React.ReactNode }) 
         <Brand />
         <div className="stack">
           <h1>News, events and swaps for Amherst Woods</h1>
-          <p>For residents of Amherst Woods only. New here? Ask to join and a board member will set you up.</p>
+          <p>The members' site of the Amherst Woods Homeowners Association, 191 homes in South Amherst. New to the neighborhood? Ask to join and a board member will set you up.</p>
         </div>
         <svg className="streets" viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="3" aria-hidden="true">
           <path d="M0 30 Q40 25 60 50 T100 60" />

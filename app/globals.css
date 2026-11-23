@@ -184,3 +184,9 @@ details.disclose summary { cursor: pointer; font-weight: 600; font-size: 14px; }
   .post { grid-template-columns: auto minmax(0, 1fr); }
   .post .thumb { display: none; }
 }
+
+/* info pages */
+.rich { display: flex; flex-direction: column; gap: 12px; font-size: 15px; }
+.rich h2 { font-size: 19px; margin-top: 10px; }
+.rich ul { margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 4px; }
+.rich a { overflow-wrap: anywhere; }

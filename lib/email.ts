@@ -28,7 +28,7 @@ export function textToHtml(text: string) {
 
 function layout(bodyHtml: string, link?: { href: string; label: string }) {
   return `<div style="font-family:system-ui,sans-serif;max-width:560px;margin:auto;color:#1C2826">
-  <div style="font-weight:700;font-size:15px;color:#2E6A4F;margin-bottom:16px">Amherst Woods Neighborhood Association</div>
+  <div style="font-weight:700;font-size:15px;color:#2E6A4F;margin-bottom:16px">Amherst Woods Homeowners Association</div>
   ${bodyHtml}
   ${link ? `<p style="margin:24px 0"><a href="${SITE}${link.href}" style="background:#2E6A4F;color:#fff;padding:10px 16px;border-radius:8px;text-decoration:none">${esc(link.label)}</a></p>` : ""}
   <p style="font-size:12px;color:#5B6A66;margin-top:32px">You get this because you're a member of the Amherst Woods portal.

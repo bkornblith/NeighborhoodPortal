@@ -66,7 +66,7 @@ async function notifyNewPost(postId: number, type: PostType, title: string, auth
 export async function createPost(formData: FormData) {
   const me = await getMe();
   const type = str(formData, "type") as PostType;
-  if (!["listing", "event", "question"].includes(type)) redirect("/");
+  if (!["listing", "event", "question", "sighting"].includes(type)) redirect("/");
   const back = `/posts/new?type=${type}`;
   const row = postFields(type, formData, back);
   if (type === "listing") {

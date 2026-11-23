@@ -110,9 +110,10 @@ export async function updateMember(formData: FormData) {
   const role = str(formData, "role") === "board" ? "board" : "member";
   const house_id = Number(formData.get("house_id")) || null;
   const full_name = str(formData, "full_name");
+  const board_title = role === "board" ? str(formData, "board_title") || "Board member" : null;
   if (id === me.id && role !== "board") redirect(`/board/members?error=${q("You can't remove your own board role. Ask another board member.")}`);
   const supabase = await createClient();
-  const { error } = await supabase.from("profiles").update({ role, house_id, ...(full_name && { full_name }) }).eq("id", id);
+  const { error } = await supabase.from("profiles").update({ role, board_title, house_id, ...(full_name && { full_name }) }).eq("id", id);
   redirect(`/board/members?${error ? "error=" + q(error.message) : "ok=" + q("Member updated.")}`);
 }
 

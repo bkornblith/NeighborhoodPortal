@@ -11,6 +11,7 @@ const FILTERS = [
   { key: "listing", label: "For sale" },
   { key: "event", label: "Events" },
   { key: "question", label: "Questions" },
+  { key: "sighting", label: "Sightings" },
   { key: "announcement", label: "Board" },
 ];
 
@@ -58,6 +59,7 @@ export default async function Home({ searchParams }: { searchParams: SP }) {
         <span className="fake">Post something to the neighborhood</span>
         <Link className="btn small" href="/posts/new?type=listing">Sell or give away</Link>
         <Link className="btn small" href="/posts/new?type=event">Event</Link>
+        <Link className="btn small" href="/posts/new?type=sighting">Sighting</Link>
         <Link className="btn small primary" href="/posts/new?type=question">Ask a question</Link>
       </div>
       {!type &&

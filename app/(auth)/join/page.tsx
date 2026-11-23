@@ -31,7 +31,7 @@ export default async function JoinPage({ searchParams }: { searchParams: SP }) {
       </div>
       <div className="field">
         <label htmlFor="address">Street address in Amherst Woods</label>
-        <input className="input" id="address" name="address" autoComplete="street-address" placeholder="12 Laurel Ct" required />
+        <input className="input" id="address" name="address" autoComplete="street-address" placeholder="12 Larkspur Dr" required />
       </div>
       <div className="field">
         <label htmlFor="note">Anything the board should know? (optional)</label>

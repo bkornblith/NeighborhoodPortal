@@ -1,6 +1,6 @@
-# Amherst Woods Neighborhood Portal
+# Amherst Woods Portal
 
-A small private website for the Amherst Woods Neighborhood Association (about 180 houses).
+A small private members' website for the Amherst Woods Homeowners Association (AWHA), 191 homes in South Amherst, MA.
 
 - **Members** sell or give away items, post events and questions, comment, RSVP, and message sellers privately.
 - **Board members** also post announcements and email them to everyone, add and remove members, approve join requests, and hide posts that get reported.

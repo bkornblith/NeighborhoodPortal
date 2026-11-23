@@ -38,8 +38,8 @@ export default async function PostPage({ params, searchParams }: { params: Promi
 
   return (
     <>
-      <Link className="small" href={post.type === "listing" ? "/market" : post.type === "event" ? "/events" : "/"}>
-        ← {post.type === "listing" ? "For sale & free" : post.type === "event" ? "Events" : "Home"}
+      <Link className="small" href={{ listing: "/market", event: "/events", sighting: "/sightings" }[post.type as string] ?? "/"}>
+        ← {{ listing: "For sale & free", event: "Events", sighting: "Sightings" }[post.type as string] ?? "Home"}
       </Link>
       <Flash error={sp.error} ok={sp.ok} />
       {post.hidden && <div className="flash error">The board has hidden this post. Only you and the board can see it.</div>}

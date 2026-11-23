@@ -8,7 +8,7 @@ import { requireBoard } from "@/lib/auth";
 import { houseLabel, timeAgo } from "@/lib/format";
 import { createAdminClient } from "@/lib/supabase/admin";
 import { createClient } from "@/lib/supabase/server";
-import type { House, Profile } from "@/lib/types";
+import { BOARD_TITLES, type House, type Profile } from "@/lib/types";
 
 export const metadata = { title: "Members" };
 
@@ -113,7 +113,7 @@ export default async function Members({ searchParams }: { searchParams: SP }) {
                     <td><div className="row" style={{ flexWrap: "nowrap" }}><Avatar name={p.full_name} board={p.role === "board"} />{p.full_name}</div></td>
                     <td className="small">{p.email}</td>
                     <td className="small">{houseLabel(houseById.get(p.house_id!)) || <span className="muted">None</span>}</td>
-                    <td><span className={`chip${p.role === "board" ? " board" : ""}`}>{p.role === "board" ? "Board" : "Member"}</span></td>
+                    <td><span className={`chip${p.role === "board" ? " board" : ""}`}>{p.role === "board" ? (p.board_title && p.board_title !== "Board member" ? p.board_title : "Board") : "Member"}</span></td>
                     <td className="small">
                       {p.status === "removed" ? <span className="chip warn">Removed</span> : confirmed.get(p.id) ? "Active" : <span className="chip warn">Invite pending</span>}
                     </td>
@@ -128,6 +128,12 @@ export default async function Members({ searchParams }: { searchParams: SP }) {
                             <div className="field">
                               <label htmlFor={`r-${p.id}`}>Role</label>
                               <select className="input" id={`r-${p.id}`} name="role" defaultValue={p.role}><option value="member">Member</option><option value="board">Board member</option></select>
+                            </div>
+                            <div className="field">
+                              <label htmlFor={`t-${p.id}`}>Board title (if on the board)</label>
+                              <select className="input" id={`t-${p.id}`} name="board_title" defaultValue={p.board_title ?? "Board member"}>
+                                {BOARD_TITLES.map((t) => <option key={t}>{t}</option>)}
+                              </select>
                             </div>
                             <button className="btn small primary" type="submit">Save</button>
                           </form>
