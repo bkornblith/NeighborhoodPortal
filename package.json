@@ -1,0 +1,34 @@
+{
+  "name": "amherst-woods-portal",
+  "private": true,
+  "version": "0.1.0",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "typecheck": "tsc --noEmit",
+    "db:start": "supabase start",
+    "db:stop": "supabase stop",
+    "env": "node scripts/write-env.mjs",
+    "seed": "node scripts/seed.mjs",
+    "setup": "supabase start && node scripts/write-env.mjs && node scripts/seed.mjs",
+    "reset": "supabase db reset && node scripts/seed.mjs"
+  },
+  "dependencies": {
+    "@supabase/ssr": "0.12.7",
+    "@supabase/supabase-js": "2.119.2",
+    "next": "15.5.29",
+    "nodemailer": "^6.9.16",
+    "react": "19.1.1",
+    "react-dom": "19.1.1",
+    "server-only": "^0.0.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22",
+    "@types/nodemailer": "^6.4.17",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "supabase": "3.3.0",
+    "typescript": "^5.6"
+  }
+}

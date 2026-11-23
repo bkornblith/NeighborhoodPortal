@@ -1,6 +1,6 @@
 # Neighborhood Association Portal: rough design
 
-Status: draft for review, not a build. Open `design/mockups.html` in a browser to click through the screens (all data is sample data for a made-up "Willow Creek" neighborhood).
+Status: decisions made 2026-11-23 (see "Decisions made" below); first version built. Open `design/mockups.html` in a browser to click through the screens (all data is sample data for a made-up "Willow Creek" neighborhood).
 
 ## Who uses it
 
@@ -65,3 +65,19 @@ Prices are estimates from public price lists; confirm before signing up.
 9. **Moderation?** Rec: board can hide any post, members can report. Alternative: board pre-approves every post.
 10. **Listing lifetime?** Rec: auto-archive after 30 days, renewable.
 11. **Domain?** Rec: buy a short .org (or use one the association already owns).
+
+## Decisions made (2026-11-23)
+
+| # | Decision | Choice |
+|---|---|---|
+| 1 | Build or buy | Build a small custom portal |
+| 2 | Stack | Next.js + Supabase + Vercel |
+| 3 | Accounts | Per person, grouped by house |
+| 4 | Listing responses | Both: public questions plus private messages to the seller |
+| 5 | Getting accounts | People ask to join and the board approves; the board can also add members directly |
+| 6 | Automatic emails | Board announcements by default; each member picks their own notifications in Settings |
+| 7 | Email service | Resend/Postmark, but not wired up yet (local test inbox for now) |
+| 8 | Directory | Opt-in directory: name and street, phone optional |
+| 9 | Moderation | Board can hide any post or comment; members can report |
+| 10 | Listing lifetime | Auto-archive after 30 days, seller can renew |
+| 11 | Domain | Association already owns one; set up later |
