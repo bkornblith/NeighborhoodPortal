@@ -23,6 +23,12 @@ function HouseSelect({ houses, value, id, name = "house_id" }: { houses: House[]
   );
 }
 
+/** "12 Larkspur Drive" and "12 larkspur dr." should match the house "12 Larkspur Dr". */
+function normAddr(a: string) {
+  const abbr: Record<string, string> = { drive: "dr", lane: "ln", circle: "cir", road: "rd", way: "way", street: "st" };
+  return a.toLowerCase().replace(/[.,]/g, " ").split(/\s+/).filter(Boolean).map((w) => abbr[w] ?? w).join(" ");
+}
+
 export default async function Members({ searchParams }: { searchParams: SP }) {
   const sp = await searchParams;
   const me = await requireBoard();
@@ -177,7 +183,7 @@ export default async function Members({ searchParams }: { searchParams: SP }) {
         <div className="stack">
           {!requests?.length && <div className="empty">No join requests waiting.</div>}
           {(requests ?? []).map((r) => {
-            const guess = houses.find((h) => r.address.toLowerCase().replace(/\s+/g, " ").includes(`${h.street_number} ${h.street}`.toLowerCase()));
+            const guess = houses.find((h) => normAddr(r.address).includes(normAddr(`${h.street_number} ${h.street}`)));
             return (
               <div key={r.id} className="panel" style={{ maxWidth: 680 }}>
                 <div className="row between">

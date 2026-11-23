@@ -81,3 +81,19 @@ Prices are estimates from public price lists; confirm before signing up.
 | 9 | Moderation | Board can hide any post or comment; members can report |
 | 10 | Listing lifetime | Auto-archive after 30 days, seller can renew |
 | 11 | Domain | Association already owns one; set up later |
+
+## Content brought over from amherstwoods.com (2026-11-23)
+
+Reviewed the old Wix site and folded in what has a clear use:
+
+| Old site | In the portal |
+|---|---|
+| Name, location, 191 homes, 9 streets | AWHA name and South Amherst copy everywhere; house list uses the real street names |
+| About Us (board roster) | Board titles on profiles; "Your board" list on the About page |
+| About, Fees, Common Property, Hiking, Pets, Resources (town links) | Board-editable **Info & dues** pages |
+| Minutes, by-laws, sewer history PDFs | **Documents** library (board uploads, members browse; files are private) |
+| Resources (service providers) | **Recommended services**: neighbors add providers and vouch for them |
+| Wildlife gallery | **Sightings** post type with photos |
+| News, listserv, directory-by-email, events-by-email, lost pets | Already covered by announcements/email blasts, the opt-in directory, events and questions |
+
+Left out on purpose: COVID links, news-outlet links, pet-food recall links, 2018–2021 news items, 2021 volunteer lists, and online dues payment (the Dues page links to the existing PayPal option).

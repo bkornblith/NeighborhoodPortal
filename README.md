@@ -3,6 +3,7 @@
 A small private members' website for the Amherst Woods Homeowners Association (AWHA), 191 homes in South Amherst, MA.
 
 - **Members** sell or give away items, post events and questions, comment, RSVP, and message sellers privately.
+- **Everyone** can read the neighborhood info pages (about, dues, common property, trails and pets, town links), browse association documents, share wildlife sightings, and add or vouch for recommended local services.
 - **Board members** also post announcements and email them to everyone, add and remove members, approve join requests, and hide posts that get reported.
 - Everyone logs in with their own email and password and **stays logged in until they log out**. Forgotten passwords are reset by email.
 
